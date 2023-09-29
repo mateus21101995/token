@@ -10,7 +10,7 @@ export function VericarAutenticação(request: Request, response: Response, next
         return response.status(401).json("token está processando!")
     }
 
-    const[, token] = authToken.split("")
+    const[, token] = authToken.split(" ")
 
     try {
         verify(token, "64348efc-bbc2-43ee-91bd-54919047226c")
